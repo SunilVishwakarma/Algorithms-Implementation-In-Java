@@ -14,11 +14,29 @@ public class Recursion {
 		return sumOfNumbers(accumulator+n, n-1);
 	}
 	
-	protected long factorial(long accumulator, long n) {
+	/**
+	 * Calculate factorial of the number
+	 * @param accumulator
+	 * @param number
+	 * @return factorial value
+	 */
+	protected long factorial(long accumulator, long number) {
 		//Base condition
-		if(n == 1)	return accumulator;
+		if(number == 1)	return accumulator;
 		
 		//Recursive call for factorial
-		return factorial(accumulator*n, n-1);
+		return factorial(accumulator*number, number-1);
+	}
+	
+	/**
+	 * Euclidean algorithm to find greatest common division
+	 * @param firstNumber
+	 * @param secondNumber
+	 * @return gcd
+	 */
+	public long gcdByEuclidean(long firstNumber, long secondNumber) {
+		if(secondNumber == 0) return firstNumber;
+		
+		return gcdByEuclidean(secondNumber, firstNumber % secondNumber);
 	}
 }
